@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+
+<script>
+    Vue.component('option-component', {
+        template: "<option>hello</option>"
+    })
+</script>
+
+<body>
+    <div id="app">
+        <selcet>
+            <option is="option-component"></option>
+            <option-component></option-component>
+        </selcet>
+
+    </div>
+    <script>
+        Vue.config.devtools = true; //크롬에 설치된 Vuedevtools를 사용하기 위해서
+        var v = new Vue({
+            el: "#app"
+        });
+    </script>
+
+</body>
+
+</html>
