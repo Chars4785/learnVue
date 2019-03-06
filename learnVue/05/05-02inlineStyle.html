@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id='example'>
+        <button id="a" v-bind:style="[myColor, myLayout]">
+        테스트    </button>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            myColor: {
+                backgroundColor: 'purple',
+                color: 'yellow'
+            },
+            myLayout: {
+                width: '150px',
+                height: '80px',
+                textAlign: 'center'
+            }
+        }
+    });
+</script>
+
+</html>
