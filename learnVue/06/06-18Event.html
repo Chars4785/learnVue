@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<!--child Component 시작-->
+<style>
+    .buttonstyle {
+        width: 120px;
+        height: 30px;
+        text-align: center;
+    }
+</style>
+<template id="childTemplate">
+    <div>
+        <button class="buttonstyle" v-on:click="clickEvent"
+        v-bind:data-lang="buttonInfor.value">
+    {{buttonInfo.text}}</button>
+    </div>
+</template>
+
+<script>
+    Vue.component('childcomponent', {
+        template: "#childTemplate",
+        data: function(e) {
+            return;
+        },
+        methods: {
+
+        }
+
+
+    })
+</script>
+
+
+<body>
+
+</body>
+
+</html>
