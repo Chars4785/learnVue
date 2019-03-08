@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<template id='timeTemplate'>
+    <div>
+        <span>{{nowTS}}</span>
+        <button v-on:click="timeClick"> 현재 시간</button>
+    </div>
+ </template>
+
+<template id="listTemplate">
+    <li>{{message}}</li>
+</template>
+
+<template id="contractTemplate">
+        <tbdoy id="contacts">
+            <tr v-for="contact in contacts">
+                <td>{{contac.no}}</td>
+                <td>{{contac.name}}</td>
+                <td>{{contac.tel}}</td>
+            </tr>
+        </tbdoy>
+
+</template>
+
+<script>
+    Vue.component('list-component', {
+        template: '#listTemplate',
+        props: {
+            message: {
+                type: String,
+                default: '안녕하세요'
+            },
+            count: {
+                type: Number,
+                required: true
+            },
+            countries: {
+                type: Array,
+                default: function() {
+                    return ['대한민국'];
+                }
+            }
+        },
+
+    })
+
+    Vue.component('contract-component', {
+        template: "#contractTemplate",
+        props: ['contacts']
+    })
+</script>
+
+<body>
+    <div id="app">
+        <contract-component :contacts="list1"></contract-component>
+    </div>
+
+</body>
+<script>
+    Vue.config.devtools = true;
+    var v = new Vue({
+        el: '#app',
+        data: {
+            list1: [{
+                "no": 97,
+                "name": "ddd",
+                "tel": "0101"
+            }, {
+                "no": 98,
+                "name": "ddd",
+                "tel": "0101"
+            }]
+        }
+    });
+</script>
+
+</html>
