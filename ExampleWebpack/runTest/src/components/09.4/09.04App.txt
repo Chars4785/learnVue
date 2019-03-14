@@ -1,0 +1,43 @@
+
+
+
+<template>
+    <div>
+        <div class="header">
+        <nav>
+        <ul>
+            <li>
+                <a href="#" @click="changeMenu('home')">Home</a>
+            </li>
+            <li>
+                <a href="#" @click="changeMenu('about')">about</a>
+            </li>
+        </ul>
+        </nav>
+        </div>
+        
+        
+        <div class="container">
+            <component v-bind:is="currentView"></component>
+        </div>
+    </div>    
+</template>
+
+<script>
+
+import Home from './components/09.4/Home.vue'
+import About from './components/09.4/about.vue'
+
+export default {
+    components:{ Home,About},
+    data(){
+        return { currentView :'home'}
+    },
+    methods:{
+        changeMenu(view){
+            this.currentView = view;
+        }
+    }
+}
+</script>
+
